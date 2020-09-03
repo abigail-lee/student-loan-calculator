@@ -1011,7 +1011,7 @@ background-color: #f3fbfc;
 @font-face {
   font-family: 'Icons';
   src: url("../../css/fonts/icons.eot");
-  src: url("./css/fonts/icons.eot?#iefix") format('embedded-opentype'), url("../../css/fonts/icons.woff2") format('woff2'), url("./assets/fonts/icons.woff") format('woff'), url("./assets/fonts/icons.ttf") format('truetype'), url("./assets/fonts/icons.svg#icons") format('svg');
+  src: url("./css/fonts/icons.eot?#iefix") format('embedded-opentype'), url("../../css/fonts/icons.woff2") format('woff2'), url("../css/fonts/icons.woff") format('woff'), url("../css/fonts/icons.ttf") format('truetype'), url("../css/fonts/icons.svg#icons") format('svg');
 }
 
 .ui.dropdown.dropdown .menu > .input i.icon.search {
