@@ -93,11 +93,11 @@ if (!('classList' in SVGElement.prototype)) {
       inputs: {
         debt: {
           id: ".js--input-debt",
-          defaultValue: "26500"
+          defaultValue: "27000"
         },
         rate: {
           id: ".js--input-interest",
-          defaultValue: "4.66"
+          defaultValue: "4.53"
         },
         term: {
           id: ".js--input-term",
