@@ -173,7 +173,7 @@ if (!('classList' in SVGElement.prototype)) {
         that.resetApp();
       });
 
-      d3.csv("data/earnings_median.csv", function(data) {
+      d3.csv("../data/earnings_median.csv", function(data) {
         that.earningsData = data;
         that.fillDropdowns();
 
@@ -183,7 +183,7 @@ if (!('classList' in SVGElement.prototype)) {
 
     dataURL: function() {
 
-      return "data/earnings_" + this.debtValues.earningsLevel + ( this.debtValues.fullTime ? "_fulltime" : "" ) + ".csv";
+      return "../data/earnings_" + this.debtValues.earningsLevel + ( this.debtValues.fullTime ? "_fulltime" : "" ) + ".csv";
 
     },
 
