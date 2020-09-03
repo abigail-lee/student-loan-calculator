@@ -1,0 +1,1514 @@
+/* BASE -------------------------- */
+.student-loan-calculator                                                {
+ max-width: 940px;
+ width:100%; 
+ background-color: #fff; 
+ position:relative;
+ } 
+
+.student-loan-calculator *                                              {
+ box-sizing: border-box; 
+ -moz-box-sizing: border-box; 
+ } 
+ /* Cause I know you like this! */
+.student-loan-calculator .clearfix:after                                {
+ content: ''; 
+ display: table; 
+ clear: both; 
+ } 
+
+.student-loan-calculator .nav                                           {
+ padding: 16px; 
+ background-color: #2A3F49; 
+ } 
+
+ .student-loan-calculator .nav .slc--degree-dropdowns {
+    width:100%;
+    display:flex;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    padding-bottom:20px;
+    margin-bottom:20px;
+ }
+
+
+.student-loan-calculator .charts                                        {
+ padding: 20px 0; 
+ margin: 0 20px; 
+ border-top: 1px solid #fff; 
+ } 
+
+.student-loan-calculator h3                                             {
+  margin: 0; 
+  font-family: Helvetica, Arial, sans-serif; 
+  text-align:center;
+  font-size: 14px; 
+  color: #000; 
+  font-weight:300; 
+} 
+
+
+
+
+/* NAV --------------------------- */
+
+
+.student-loan-calculator .nav .item:first-child {
+ margin-left: 10px; 
+ border-left: none; 
+ } 
+
+.student-loan-calculator .nav .item:last-child {
+ border-right: none; 
+ } 
+
+.student-loan-calculator .nav .slc--degree-dropdowns label {
+  font-family: Helvetica, Arial, sans-serif; 
+  font-size: 16px; 
+  color: #fff; 
+} 
+
+.student-loan-calculator .nav label.full-time                           {
+ font-weight: normal; 
+ text-transform: none; 
+ } 
+
+.student-loan-calculator .nav .input-wrap                               {
+ display: block; 
+ position: relative; 
+ margin-top: 8px; 
+ } 
+
+.student-loan-calculator .nav .input-wrap:before                        {
+ position: absolute; 
+ top: 6px; 
+ right: 6px; 
+ width: 20px; 
+ font-size: 16px; 
+ color: #aaa; 
+ } 
+
+.student-loan-calculator .nav input[type="text"]                        {
+ width: 100%; 
+ margin: 0; 
+ padding: 8px 6px; 
+ font-size: 16px; 
+ text-align: right; 
+  } 
+
+.student-loan-calculator .nav select                                    {
+ width: 100%; 
+ font-size: 13px; 
+ } 
+
+.student-loan-calculator .nav input[type="checkbox"]                    {
+ top: auto; 
+ } 
+ /* Cleans up an odd style cascading form THP's CSS reset. */
+/* Field Specific */
+.student-loan-calculator .nav .degree                                   {
+ width: 100%; 
+ } 
+
+.student-loan-calculator .nav .debt                                     {
+ width: 100px; 
+ } 
+
+.student-loan-calculator .nav .debt .input-wrap:before                  {
+ content: '$'; 
+ left: 6px; 
+ } 
+
+.student-loan-calculator .nav .interest                                 {
+ width: 100px; 
+ } 
+
+.student-loan-calculator .nav .interest .input-wrap:before              {
+ content: '%'; 
+ } 
+
+.student-loan-calculator .nav .interest input                           {
+ padding-right: 30px; 
+ } 
+
+.student-loan-calculator .nav .term                                     {
+ width: 80px; 
+ } 
+
+.student-loan-calculator .nav .term .input-wrap:before                  {
+ content: 'YRS'; 
+ top: 12px; 
+ font-size: 10px; 
+ } 
+
+.student-loan-calculator .nav .term input                               {
+ padding-right: 30px; 
+ } 
+
+.student-loan-calculator .nav .increase                                 {
+ width: 100px; 
+ } 
+
+.student-loan-calculator .nav .increase .input-wrap:before              {
+ content: '$'; 
+ left: 6px; 
+ } 
+
+.student-loan-calculator .nav .earnings select                          {
+ width: 80px; 
+ } 
+
+.student-loan-calculator .nav .earnings input                           {
+ margin: 0 4px 0 0; 
+ } 
+
+.student-loan-calculator .nav .reset                                    {
+ margin-right: 0; 
+ } 
+
+.slc--help-reset {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.student-loan-calculator .nav .reset button, .student-loan-calculator .nav .btn_help button, 
+button#interstital__close, .interstitial__reset .reset button, .student-loan-calculator button#params-btn,
+.slc--params.mobile-active button#params-close {
+    background: #017463;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    font-size: 12px;
+    display: inline-block;
+    padding: 5px 7px;
+    border-radius: 3px;
+    margin: 0;
+}
+.student-loan-calculator .nav .reset button:hover,
+.student-loan-calculator .nav .btn_help button:hover,
+.student-loan-calculator .nav .reset button:focus,
+.student-loan-calculator .nav .btn_help button:focus,
+button#interstital__close:hover,
+button#interstital__close:focus,
+.interstitial__reset .reset button:hover,
+.interstitial__reset .reset button:focus,
+.student-loan-calculator button#params-btn:focus,
+.slc--params.mobile-active button#params-close:focus {
+    background: #015b4d; 
+    color: #fff; 
+}
+
+.student-loan-calculator button#params-btn {
+  display:none;
+} 
+
+ .student-loan-calculator .nav .reset button {
+  margin-right:10px;
+}
+
+/* Tips */
+.student-loan-calculator .nav .tip                                      {
+ display: inline; 
+ position: relative; 
+ } 
+
+.student-loan-calculator .nav .tip:before                               {
+ content: '?'; 
+ display: inline-block; 
+ width: 14px; 
+ height: 14px; 
+ background-color: #6390a6; 
+ text-align: center; 
+ border-radius: 50%; 
+ color: #eee; 
+ cursor: help; 
+ } 
+
+.student-loan-calculator .nav .tip .tip-content                         {
+ display: none; 
+ position: absolute; 
+ top: 22px; 
+ left: -123px; 
+ z-index: 100; 
+ width: 260px; 
+ padding: 15px; 
+ background-color: #f3fbfc; 
+ box-shadow: 0 0 5px #999; 
+ } 
+
+.student-loan-calculator .nav .tip:hover .tip-content                   {
+ display: block; 
+ } 
+
+.student-loan-calculator .nav .tip:hover:before                         {
+ background-color: #14adcc; 
+ } 
+
+.student-loan-calculator .nav .tip .tip-content:after                   {
+ content: ''; 
+ display: block; 
+ position: absolute; 
+ top: -5px; 
+ left: 123px; 
+ width: 14px; 
+ height: 14px; 
+ -ms-transform: rotate(45deg); 
+ -webkit-transform: rotate(45deg); 
+ transform: rotate(45deg); 
+background-color: #f3fbfc; 
+ } 
+
+.student-loan-calculator .nav .tip p                                    {
+ margin-bottom: 10px; 
+ font-size: 10px; 
+ line-height: 14px; 
+ color: #333; 
+ } 
+
+.student-loan-calculator .nav .tip ul                                   {
+ margin: 0 0 10px 0; 
+ padding-left: 12px; 
+ } 
+
+.student-loan-calculator .nav .tip li                                   {
+ margin-bottom: 4px; 
+ font-size: 10px; 
+ line-height: 14px; 
+ color: #333; 
+ } 
+
+.student-loan-calculator .nav .tip :last-child                          {
+ margin-bottom: 0; 
+ } 
+
+/* Validation */
+.student-loan-calculator .nav .invalid                                  {
+ display: none; 
+ position: relative; 
+ } 
+
+.student-loan-calculator .nav .invalid p                                {
+ position: absolute; 
+ top: 10px; 
+ left: -20px; 
+ z-index: 99; 
+ width: 160px; 
+ padding: 7px 10px; 
+ background-color: #faeaea; 
+ border:2px solid #941E35;
+ font-family: Helvetica, Arial, sans-serif; 
+ font-size: 12px; 
+ color: #941e36;
+ font-weight:700; 
+ } 
+
+.student-loan-calculator .nav .invalid p:after                          {
+ content: ''; 
+ display: block; 
+ position: absolute; 
+ top: -9px; 
+ left: 73px; 
+ width: 14px; 
+ height: 14px; 
+ -ms-transform: rotate(45deg); 
+ -webkit-transform: rotate(45deg); 
+ transform: rotate(45deg); 
+  background-color: #faeaea; 
+  border-top:2px solid #941E35;
+  border-left:2px solid #941E35;
+  z-index:2;
+ } 
+
+.student-loan-calculator .nav .is-invalid input[type="text"]            {
+ border-color: #941e36; 
+ } 
+
+.student-loan-calculator .nav .is-invalid .invalid                      {
+ display: block; 
+ } 
+
+.slc--params {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.slc--params > * {
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 1px solid rgba(255,255,255,0.4);
+}
+
+div#earnings_chosen, .slc--params .item .tip {
+  display:none;
+}
+
+.slc--params .item label {
+    font-size: 14px;
+    color: #fff;
+    line-height:1.1;
+}
+
+.slc--params .item {
+  display:flex;
+  flex-direction:column;
+  justify-content: space-between;
+}
+
+.slc--params .item.full-time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Customize the label (the container) */
+.container {
+  display: block;
+  position: relative;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.full-time.container {
+  padding-left: 30px;  
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom radio button */
+.radio-dot {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .radio-dot {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .radio-dot {
+  background-color: #fff;
+  border:1px solid #017463;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.radio-dot:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .radio-dot:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .radio-dot:after {
+  top: 3px;
+  left: 3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #017463;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: -3px;
+  left: 0px;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #017463;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 6px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.item.earnings .earnings--radio label {
+    font-weight: 400;
+    padding-left: 25px;
+    padding-right: 15px;
+}
+
+.item.earnings .earnings--radio {
+    display: flex;
+    align-items: center;
+}
+
+.item.earnings .input-wrap {
+  margin-bottom:20px;
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.input__guide p {
+    margin-bottom: 0.5em;
+    color: #f5f5f5;
+    font-style: italic;
+}
+
+@media screen and (max-width:768px) {
+  .item.earnings .input-wrap {
+    margin-bottom:0;
+  }
+  .item.full-time.mobile {
+    display:block;
+    margin-top:10px;
+  }
+}
+
+
+/* STATS ------------------------- */
+.student-loan-calculator .stats {
+  display: flex;
+  flex-direction: row;
+  border-bottom:1px solid #1C2E38;
+  padding: 20px 0; 
+  margin: 0 20px; 
+}
+
+.student-loan-calculator .stats .item                                   { 
+  width: 300px; 
+  padding: 10px 20px; 
+  border-right: 1px solid #1C2E38; 
+ } 
+
+.student-loan-calculator .stats .item:first-child                       {
+ border-left: none; 
+ } 
+
+.student-loan-calculator .stats .item:last-child                        {
+ border-right: none; 
+ } 
+
+.student-loan-calculator .stats p                                       {
+ margin: 5px 0 0 0; 
+ font-family: Georgia, "Times New Roman", Times, serif; 
+ font-size: 42px; 
+ color: #1C2E38; 
+ text-align:center;
+ } 
+
+
+
+
+/* CHARTS ------------------------ */
+.student-loan-calculator .charts h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+}
+.student-loan-calculator .charts .chart-1 h3 {
+    font-weight: 700;
+    margin-bottom: 1em;
+    font-size: 18px;
+    text-align: left;
+}
+
+.student-loan-calculator .charts .chart-1 > p {
+    font-size: 14px;
+    color: #333;
+}
+
+.student-loan-calculator .charts p                                      {
+ margin: 0; 
+ font-family: Helvetica, Arial, sans-serif; 
+ font-size: 11px; 
+ color: #999; 
+ } 
+
+.student-loan-calculator .charts .chart  {
+
+  position: relative; 
+
+} 
+
+.student-loan-calculator .charts .chart text {
+
+  text-rendering: optimizeLegibility; 
+
+} 
+
+.student-loan-calculator .charts .chart .tip {
+  background: #f5f5f5; 
+  display: block; 
+  position: absolute; 
+  padding: 1em 2em; 
+  top: 50px; 
+  left: 0; 
+  min-width: 175px; 
+  color:#333;
+} 
+
+.student-loan-calculator .charts .chart .tip strong {
+
+  font-size: 18px; 
+
+  display: block; 
+
+  text-align: center; 
+
+  font-family:  Georgia, Times New Roman, serif; 
+
+  font-weight: normal; 
+
+  line-height: 1em; 
+
+  border-bottom: 1px solid #eee; 
+
+  padding-bottom: .125em; 
+
+  margin-bottom: .125em; 
+
+} 
+
+.student-loan-calculator .charts .chart .tip strong small               {
+ font-size: .625em; 
+ } 
+
+.student-loan-calculator .charts .chart .tip.high strong                {
+ background-color: #ff6300; 
+ } 
+
+.student-loan-calculator .charts .chart .tip.mid strong                 {
+ background-color: #ffb400; 
+ } 
+
+.student-loan-calculator .charts .chart .tip.low strong                 {
+ background-color: #6db635; 
+ } 
+
+.student-loan-calculator .charts .chart .tip.comparison strong          {
+ background-color: #B1B4B5; 
+ } 
+
+.student-loan-calculator .charts .chart .tip table {
+  margin-bottom: 0; 
+} 
+
+.student-loan-calculator .charts .chart .tip td {
+  padding: 0; 
+  line-height: 1.75em; 
+} 
+
+.student-loan-calculator .charts .chart .tip td.number {
+  text-align: right; 
+} 
+
+.student-loan-calculator .charts p.js--major {
+    color: #333;
+    text-align: center;
+    margin: 0.5em 0 1em 0;
+    font-size: 12px;
+    text-transform: capitalize;
+}
+
+.student-loan-calculator .charts .chart .tip table td {
+    font-weight: 300;
+    color: #555;
+}
+
+/* Chart 1 */
+.student-loan-calculator .chart-1                                       {
+ float: left; 
+ width: 100%;
+ max-width:600px; 
+ height: 440px; 
+ padding: 10px 20px; 
+ border-right: 1px solid #1C2E38; 
+ } 
+
+.student-loan-calculator .chart-1 .chart {
+  width:100%;
+ /*max-width: 560px; */
+ height: 320px; 
+ margin: 20px 0; 
+ } 
+
+.student-loan-calculator .chart-1 .compare                              {
+ float: left; 
+ width:50%;
+ } 
+
+.student-loan-calculator .chart-1 .compare label                        {
+ float: left; 
+ height: 36px; 
+ padding: 11px 6px 0 6px; 
+ background-color: #14adcc; 
+ font-family: Helvetica, Arial, sans-serif; 
+ text-transform: uppercase; 
+ font-size: 10px; 
+ color: #fff; 
+ } 
+
+.student-loan-calculator .chart-1 .compare select                       {
+ float: left; 
+ width: 100%; 
+ } 
+
+.student-loan-calculator .chart-1 .key                                  {
+ position: relative; 
+ margin-top: 5px; 
+ cursor: help; 
+ } 
+
+.student-loan-calculator .chart-1 .key ul                               {
+ margin: 0; 
+ list-style: none; 
+ } 
+
+.student-loan-calculator .chart-1 .key li                               {
+ float: left; 
+ min-width: 50px;  
+ padding: 3px 7px; 
+ margin: 0; 
+ background: #ffb400; 
+ font-family: Helvetica, Arial, sans-serif; 
+ font-size: 14px; 
+ line-height: 1.2em; 
+ color: #333; 
+ font-weight:700;
+ text-align: center; 
+ } 
+
+.student-loan-calculator .chart-1 .key li:first-child                   {
+ background-color: #6db635; 
+ } 
+
+.student-loan-calculator .chart-1 .key li:last-child                    {
+ background-color: #ff6300; 
+ } 
+
+.student-loan-calculator .chart-1 .key p                                {
+ display: none; 
+ position: absolute; 
+ bottom: 100%; 
+ left: -25px; 
+ z-index: 999; 
+ width: 260px; 
+ padding: 15px; 
+ margin-bottom: 5px; 
+ background-color: #f3fbfc; 
+ box-shadow: 0 0 5px #999; 
+ font-family: Helvetica, Arial, sans-serif; 
+ font-size: 10px; 
+ line-height: 14px; 
+ color: #333; 
+ } 
+
+.student-loan-calculator .chart-1 .key:hover p                          {
+ display: block; 
+ } 
+
+.student-loan-calculator .chart-1 .key p:after                          {
+ content: ''; 
+ display: block; 
+ position: absolute; 
+ bottom: -5px; 
+ left: 123px; 
+ width: 14px; 
+ height: 14px; 
+ -ms-transform: rotate(45deg); 
+ -webkit-transform: rotate(45deg); 
+ transform: rotate(45deg); 
+background-color: #f3fbfc; 
+ } 
+
+.student-loan-calculator .chart-1 .bar:hover                            {
+ cursor: pointer; 
+ } 
+
+.student-loan-calculator .chart-1 .primary .bar.percent-high            {
+ fill: #ff6300; 
+ } 
+
+.student-loan-calculator .chart-1 .primary .bar.percent-high:hover,
+.student-loan-calculator .chart-1 .primary .bar.percent-high.focus      {
+ fill: #f05600; 
+ } 
+
+.student-loan-calculator .chart-1 .primary .bar.percent-mid             {
+ fill: #ffb400; 
+ } 
+
+.student-loan-calculator .chart-1 .primary .bar.percent-mid:hover,
+.student-loan-calculator .chart-1 .primary .bar.percent-mid:focus        {
+ fill: #efa600; 
+ } 
+
+.student-loan-calculator .chart-1 .primary .bar.percent-low             {
+ fill: #6db635; 
+ } 
+
+.student-loan-calculator .chart-1 .primary .bar.percent-low:hover,
+.student-loan-calculator .chart-1 .primary .bar.percent-low.focus       {
+ fill: #509c1d; 
+ } 
+
+.student-loan-calculator .chart-1 .comparison .bar                      {
+ fill: #B1B4B5; 
+ } 
+
+.student-loan-calculator .chart-1 .comparison .bar:hover,
+.student-loan-calculator .chart-1 .comparison .bar.focus                {
+ fill: #929394; 
+ /*fill: rgba(20,173,204,.6); */
+ } 
+
+.student-loan-calculator .chart-1 .axis path,
+.student-loan-calculator .chart-1 .axis line                            {
+ fill: none; 
+ stroke: #CCCCCC; 
+ shape-rendering: crispEdges; 
+ } 
+
+.student-loan-calculator .chart-1 .y.axis .tick line                    {
+ stroke: #f3f3f3; 
+ } 
+
+.student-loan-calculator .chart-1 .axis .tick text                      {
+ fill: #1C2E38; 
+ } 
+
+.student-loan-calculator .chart-1 .y.axis .tick:last-child text         {
+ display: none; 
+ } 
+
+
+
+/* Chart 2 */
+.student-loan-calculator .chart-2                                       {
+ float: left; 
+ width: 300px; 
+ height: 440px; 
+ padding: 10px 20px; 
+ font-family: Helvetica, Arial, sans-serif; 
+ } 
+
+.student-loan-calculator .chart-2 .chart                                {
+ position: relative; 
+ width: 215px; 
+ height: 215px; 
+ margin: 40px auto; 
+ } 
+
+.student-loan-calculator .chart-2 td                                    {
+ margin: 0; 
+ padding: 4px 0; 
+ border-bottom: 1px dashed #ccc;
+ font-weight:300; 
+ } 
+
+.student-loan-calculator .chart-2 td:not(:first-child)                  {
+ text-align: right; 
+ } 
+
+.student-loan-calculator .chart-2 td:first-child:before                 {
+ content: ''; 
+ display: inline-block; 
+ vertical-align: middle; 
+ width: 12px; 
+ height: 12px; 
+ margin-right: 4px; 
+ background-color: black; 
+ border-radius: 50%; 
+ } 
+
+.student-loan-calculator .chart-2 td.principal:before                   {
+ background-color: #6e2585; 
+ } 
+
+.student-loan-calculator .chart-2 td.interest:before                    {
+ background-color: #00ADCF; 
+ } 
+
+.student-loan-calculator .chart-2 td.unused:before                      {
+ background-color: #007363; 
+ } 
+
+.student-loan-calculator .chart-2 .arc path                             {
+ stroke: #fff; 
+ stroke-width: 1.5px; 
+ } 
+
+.student-loan-calculator .chart-2 .earnings-sum                         {
+ position: absolute; 
+ top: 75px; 
+ width: 100%; 
+ text-align: center; 
+ } 
+
+.student-loan-calculator .chart-2 .earnings-sum .value                  {
+ font-family:  Georgia, Times New Roman, serif; 
+ font-size: 2.5em; 
+ color: #175c73;
+ margin-bottom:5px; 
+ } 
+
+.student-loan-calculator .chart-2 .earnings-sum .units                  {
+ width: 41%; 
+ margin: -4px auto; 
+ font-size: 12px; 
+ line-height: 1.2em; 
+ color: #666; 
+ font-weight:300;
+ } 
+
+
+
+/* Deselect X */
+.student-loan-calculator .chosen-container-single .chosen-single abbr                           {
+ border: 0; 
+ top: 12px; 
+ } 
+
+
+/* Dropup on Compare Option */
+.student-loan-calculator .compare .chosen-drop    {
+ top: auto; 
+ border-top: 1px solid #aaa; 
+ border-bottom: 0; 
+ box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); 
+ } 
+
+.degree__divider {
+    text-align: center;
+    flex-basis: 75px;
+    flex-grow: 0;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.slc--degree-dropdowns .compare, .student-loan-calculator .nav .degree {
+    width: 100%;
+}
+
+.slc--degree-dropdowns .chosen-container {
+    width: 100%;
+}
+
+.degree__divider p {
+    margin-bottom:0;
+}
+
+/* NEW DROPDOWNS */
+.ui.floating.dropdown.labeled.icon.button {
+  background-color:#FEFEFE;
+  color:#000;
+  font-size:14px;
+  width:100%;
+  padding:7px;
+  border:1px solid #ccc;
+  position:relative;
+  line-height:1.2;
+}
+
+
+.dropdown > i.icon.dropdown {
+  float:right;
+  top:10%;
+  color:#545454;
+}
+
+.ui.floating.dropdown.labeled.icon.button:nth-of-type(n+2) {
+  margin-left:10px;
+}
+
+
+.ui.floating.dropdown.labeled.icon.button span.text {
+  max-width:80%;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  white-space:nowrap;
+  text-transform: capitalize;
+}
+
+.ui.floating.dropdown.labeled.icon.button .menu {
+  max-height:300px;
+  overflow-y:scroll;
+  width:215px;
+  background: #F5F5F5;
+  border-radius:0 !important;
+  margin-top:1px !important;
+  margin-left:-1px !important;
+
+}
+
+.ui.dropdown.dropdown .menu > .input {
+  margin:0;
+  padding:10px;
+}
+
+.ui.dropdown.dropdown .menu > .input input {
+  font-size:12px;
+  line-height:1.3;
+  vertical-align: middle;
+  width:100%;
+  text-align:left;
+  position:relative;
+}
+
+@font-face {
+  font-family: 'Icons';
+  src: url("../../css/fonts/icons.eot");
+  src: url("./css/fonts/icons.eot?#iefix") format('embedded-opentype'), url("../../css/fonts/icons.woff2") format('woff2'), url("./assets/fonts/icons.woff") format('woff'), url("./assets/fonts/icons.ttf") format('truetype'), url("./assets/fonts/icons.svg#icons") format('svg');
+}
+
+.ui.dropdown.dropdown .menu > .input i.icon.search {
+  font-family: 'Icons';
+  font-size:16px;
+  color:#000;
+  z-index:3;
+  position: absolute;
+  right:10px;
+  top:6px;
+}
+
+.degrees-chart .ui.floating.dropdown.labeled.icon.button.drop-visible {
+  display:block;
+}
+
+.ui.floating.dropdown.labeled.icon.button .menu .item {
+  font-size:12px;
+  color:#000;
+  padding:0.3rem 1.14285714rem 0.3rem 1.14285714rem !important;
+  max-width:100%;
+  white-space:normal;
+  line-height:1.3;
+  text-transform: capitalize;
+  margin-left:0;
+}
+
+.ui.floating.dropdown.labeled.icon.button .menu > .section .item:hover {
+  background:#1C2E38;
+  color:#fff;
+}
+
+.ui.floating.dropdown.labeled.icon.button .menu .item.disabled {
+  pointer-events: none;
+  color:#aaa;
+}
+
+.ui.floating.dropdown.labeled.icon.button .menu .header {
+  text-transform:none;
+  font-size:14px;
+  border-bottom:0;
+  padding:0em 0.75rem 0em 0.75rem;
+  margin-bottom:0.5em;
+}
+
+@media screen and (max-width:768px) {
+  .ui.floating.dropdown.labeled.icon.button {
+    width:100%;
+    max-width:450px;
+  }
+
+  .ui.floating.dropdown.labeled.icon.button:nth-of-type(n+2) {
+    margin-left:0;
+    margin-top:10px;
+  } 
+} 
+
+
+/* OVERLAY */
+.overlay.js-overlay {
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.75);
+    display:none;
+}
+
+.slc--interstitial {
+    background: #fff;
+    width: 80%;
+    max-width: 700px;
+    position:relative;
+    font-size:14px;
+    display:none;
+}
+
+.overlay.js-overlay.open {
+  display:flex;
+}
+.overlay.js-overlay.open .slc--interstitial.interstitial__help.active,
+.overlay.js-overlay.open .slc--interstitial.interstitial__reset.active {
+  display:block;
+}
+
+.slc--interstitial h3 {
+    background-color: #2A3F49;
+    padding: 8px 0;
+    color: #fff;
+    font-weight: bold;
+}
+
+.slc--interstitial table#inter__help td.term {
+    font-weight: 700;
+    padding: 0 10px;
+    vertical-align: top;
+}
+
+.slc--interstitial table#inter__help {
+    padding: 20px 10px;
+    border-spacing:3px;
+}
+button#interstital__close {
+    position: absolute;
+    top: 3px;
+    right: 5px;
+    padding:3px 7px;
+}
+
+.slc--interstitial.interstitial__reset {
+    width: 40%;
+    max-width: 400px;
+    padding: 15px;
+    display:none;
+}
+
+button#reset__cancel {
+    border: none;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 3px 5px;
+    display: inline-block;
+    background:transparent;
+}
+
+button#reset__cancel:hover {
+    cursor: pointer;
+}
+
+.interstitial__reset .reset button {
+  font-size:14px;
+  text-transform: uppercase;
+  font-weight:500;
+  padding:7px 15px;
+}
+
+.interstitial__reset .btn-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.student-loan-calculator .chosen-container .chosen-results li.highlighted {
+    background: #2A3F49;  
+}
+
+.student-loan-calculator .chosen-container .chosen-results li.group-result {
+  text-transform: capitalize;
+  font-weight:700;
+  font-size:1.1em;
+  color:#1C2E38;
+}
+.student-loan-calculator .chosen-container .chosen-results li.group-option {
+  padding-left:15px;
+}
+
+.mobile-controls, .slc--params .item.full-time.mobile,
+.slc--params .mobile-window {
+  display:none;
+}
+
+
+@media screen and (max-width:991px) {
+  .slc--params {
+    justify-content: space-around;
+  }
+  .slc--params .item.earnings {
+    border-right:0;
+  }
+  .slc--params .item.earnings .input-wrap {
+    align-items: flex-start;
+    margin-bottom: 0;
+  }
+  .slc--params .item.earnings .earnings--radio {
+    margin-bottom:10px;
+  }
+  .slc--params .item.full-time {
+    display:none;
+  }
+  .slc--params .item.full-time.mobile {
+    display:flex;
+  }
+  .student-loan-calculator .chart-1,
+  .student-loan-calculator .chart-1 .chart,
+  .student-loan-calculator .chart-2,
+  .student-loan-calculator .chart-2 .chart {
+    height:auto;
+  }
+  .student-loan-calculator .chart-1 {
+    border-right:none;
+    max-width:none;
+    border-bottom:1px solid #666;
+  }
+  .student-loan-calculator .chart-1 svg {
+    width:100%;
+    height:auto;
+  }
+
+  .student-loan-calculator .chart-2 {
+    margin-top:30px;
+    width:100%;
+  }
+
+  .student-loan-calculator .chart-2 #chart-2-container {
+    display:flex;
+    flex-direction:row;
+    margin-top:30px;
+  }  
+  .student-loan-calculator .chart-2 .chart {
+    margin-top: 0;
+    margin-right: 30px;
+  }
+
+  .student-loan-calculator .chart-2 h3 {
+      text-align:left;
+      margin-bottom:2em;
+  }
+
+   .mobile-controls {
+    margin-bottom:30px;
+    display:block;
+   }
+
+  .mobile-controls #mobile-tooltip-container {
+    display:flex;
+    justify-content: center;
+  }
+
+  .student-loan-calculator  .charts .chart .mobile-controls .tip {
+    display:inline-flex;
+    flex-direction: column;
+    background: #f5f5f5;
+    box-shadow:none;
+    position: static;
+    left: 0;
+    width: 175px;
+    margin:1em 0;
+    text-transform: capitalize;
+  }
+   .student-loan-calculator  .charts .chart .mobile-controls .tip#primary-tip {
+    justify-content: center
+   }
+  .student-loan-calculator  .charts .chart .mobile-controls .tip#compare-tip {
+      border-left:1px solid #666;
+      display:none;
+  }
+
+  .student-loan-calculator  .charts .chart .mobile-controls .tip#compare-tip.comparison {
+      display:flex;
+  }
+
+  .student-loan-calculator .charts .chart .tip strong {
+    font-weight: 700;
+    padding: 7px 0;
+    color:#000;
+  }
+  .student-loan-calculator .charts .chart .tip.low strong {
+    background-color: #6db635;
+  }
+
+  /** SLIDERS **/
+  .slidecontainer {
+    width: 100%; /* Width of the outside container */
+    margin:auto;
+    display:block;
+  }
+
+  .degrees-chart .chart .mobile-slider-container > p.subtitle {
+    margin:0 0 20px 0;
+  }
+
+  /* The slider itself */
+  .slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 5px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+  }
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none;
+    width: 20px; 
+    height: 20px; 
+    background: #2A3F49;
+    border-radius:50%;
+    cursor: pointer; 
+  }
+
+  .slider::-moz-range-thumb {
+    width: 20px; 
+    height: 20px; 
+    background: #2A3F49;
+    cursor: pointer;
+  }
+  .slider--typebox {
+    display:inline-block;
+    position: relative;
+  }
+
+  .slider--typebox input {
+    background-color:#2A3F49;
+    -webkit-appearance: none;
+    appearance:none;
+    border:0px;
+    padding:10px 5px;
+    color:#fff;
+    font-size:14px;
+    border-radius:18%;
+    text-align:center;
+    margin-top:9px;
+    width:35px;
+    position:relative;
+  }
+
+  /* hide number incrementers */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  .student-loan-calculator #chart-2-container table {
+    width:calc(100% - 250px);
+  }
+}
+
+@media screen and (max-width:700px) {
+  .student-loan-calculator .stats .item {
+    width:33%;
+  }
+  .student-loan-calculator .stats p {
+    font-size:32px;
+  }
+  .student-loan-calculator button#params-btn {
+    display:block;
+    font-size:14px;
+    margin:auto;
+  }
+  #params-btn-container {
+    text-align: center;
+  }
+  .student-loan-calculator .nav .slc--degree-dropdowns {
+    border-bottom:0;
+  }
+
+  .slc--params {
+    display:none;
+  }
+  .slc--params.mobile-active {
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    background-color:#2A3F49;
+    z-index:3;
+    width:100%;
+    padding:10px;
+    color:#fff;
+    font-size:14px;
+    height:100vh;
+  }
+  .slc--params.mobile-active p {
+    font-style:italic;
+  }
+  .slc--params.mobile-active h3 {
+    color:#fff;
+    font-weight:700;
+    font-size:16px;
+    margin:1em 0;
+    padding-bottom:7px;
+    border-bottom:1px solid rgba(255,255,255,0.4);
+  }
+  .slc--params.mobile-active > .item {
+    display:inline-block;
+    width:calc(50% - 10px);
+  }
+  .slc--params.mobile-active .item.full-time.mobile {
+    display:none;
+  }
+  .slc--params.mobile-active .item.full-time {
+    margin-top:20px;
+    width:100%;
+  }
+  .slc--params.mobile-active > .item:nth-of-type(odd),
+  .slc--params.mobile-active .mobile-window {
+    border-right:none;
+    margin-right:0;
+  }
+  .slc--params.mobile-active .mobile-window {
+    display:block;
+  }
+  .slc--params.mobile-active .mobile-window p, .slc--params.mobile-active .mobile-window button {
+    display:inline-block;
+    width:50%;
+  }
+  .slc--params.mobile-active .mobile-window button {
+    width:initial;
+    float:right;
+  }
+  .student-loan-calculator .nav .reset button, .student-loan-calculator .nav .btn_help button, 
+  button#interstital__close, .interstitial__reset .reset button, .student-loan-calculator button#params-btn,
+  .slc--params.mobile-active button#params-close {
+    font-size:14px;
+    padding:7px 10px;
+  }
+  .slc--params.mobile-active > .item.earnings {
+    width:100%;
+    margin-top:10px;
+    padding-top:10px;
+    border-top:1px solid rgba(255,255,255,0.4);
+    border-bottom:1px solid rgba(255,255,255,0.4);
+  }
+  .slc--params.mobile-active > .item.earnings > * {
+    padding:7px 0;
+  }
+  .student-loan-calculator .charts {                                        
+    padding: 20px 0; 
+    margin: 0 10px;
+  } 
+   .student-loan-calculator .chart-2 {
+    margin-top:15px;
+    width:100%;
+  }
+
+  .student-loan-calculator #chart-2-container table {
+    width:100%;
+  }
+
+  .student-loan-calculator .chart-2 #chart-2-container {
+    display:block;
+  }  
+  .student-loan-calculator .chart-2 .chart {
+    margin:auto;
+    margin-bottom:15px;
+  }
+  .overlay.js-overlay.open {
+    align-items: flex-start;
+  }
+
+  .slc--interstitial {
+      width: 100%;
+      position:fixed;
+  }
+  .slc--interstitial h3 {
+      padding: 12px;
+  }
+  .slc--interstitial.interstitial__reset {
+    width:70%;
+    margin-top:30px;
+  }
+  .student-loan-calculator button#params-btn {
+    font-size:16px;
+    padding:0.75em 1em;
+  }
+} 
+
+@media screen and (max-width:532px) {
+  .student-loan-calculator .nav .slc--degree-dropdowns {
+    flex-direction:column;
+  }
+  .degree__divider {
+    flex-basis:2.5em;
+  }
+  .slc--help-reset {
+    margin-bottom:20px;
+  }
+  .student-loan-calculator .nav select {
+    padding:10px 7px;
+  }
+  .student-loan-calculator .nav .item:first-child {
+    margin-left:0;
+  }
+  .student-loan-calculator .stats {
+    margin:3px;
+  }
+  .student-loan-calculator .stats .item {
+    width:33%;
+    padding:10px;
+  }
+  .student-loan-calculator .stats p {
+    font-size:24px;
+  }
+  .slc--params.mobile-active .mobile-window p {
+    display:inline-block;
+    width:70%;
+  }
+
+}

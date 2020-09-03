@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>The Hamilton Project</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noindex,nofollow" />
+        <link rel="icon" type="image/png" href="/assets/img/site/site-icons/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="/assets/img/site/site-icons/favicon-16x16.png" sizes="16x16" />
+        <link rel="apple-touch-icon" href="/assets/img/site/site-icons/thp-apple-touch-icon.png" />
+
+        <link rel="stylesheet" type="text/css" href="css/reset.css"><!-- This is the reset CSS from the old website. -->
+        <link rel="stylesheet" type="text/css" href="js/vendor/transition.css" />
+        <link rel="stylesheet" type="text/css" href="js/vendor/dropdown.css" />
+        <link rel="stylesheet" type="text/css" href="css/student-loan-calculator.css" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="css/vendor/chosen/chosen.css" type="text/css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        
+    </head>
+    
+    <body>
+        
+        
+        <div class="student-loan-calculator">
+            <div class="overlay js-overlay">
+                <div class="slc--interstitial interstitial__help">
+                    <h3>Help</h3>
+                    <button id="interstital__close">Close</button>
+                    <table id="inter__help">
+                        <tr>
+                            <td class="term">Debt</td>
+                            <td class="definition">About 70 percent of Bachelor&rsquo;s graduates borrow before earning their degree, and the typical amount of student debt for those who borrowed was $26,500 as of 2012, the most recent year available.</td>
+                        </tr>
+                         <tr>
+                            <td class="term">Interest</td>
+                            <td class="definition">The interest rate on federal student loans changes each year and is currently 4.66% for the 2014-2015 school year. The interest rate on private student loans may be different.</td>
+                        </tr>
+                        <tr>
+                            <td class="term">Term</td>
+                            <td class="definition">Standard student loans have a 10-year repayment term, but this period can be lengthened in some circumstances.</td>
+                        </tr>
+                        <tr>
+                            <td class="term">Additional Payment</td>
+                            <td class="definition">There are no fees or penalties for paying off federal student loans faster than the normal monthly payment and doing so will result in less total interest paid at the expense of a larger monthly payment. Enter any additional payment per month here.</td>
+                        </tr>
+                        <tr>
+                            <td class="term">Earnings</td>
+                            <td class="definition">
+                                <p><strong>Earnings Level:</strong> Some graduates earn more than others, even within the same major:</p>
+                                <ul>
+                                    <li>High: 75th percentile of earnings in this major.</li>
+                                    <li>Middle: 50th percentile of earnings in this major.</li>
+                                    <li>Low: 25th percentile of earnings in this major.</li>
+                                </ul>
+                                <p><strong>Always Work Full-Time:</strong> Because not everyone finds a full-time job right away, by default the earnings calculation includes all workers. Check the "Always Work Full-Time" box to show earnings based only on full-time workers in each repayment year.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="slc--interstitial interstitial__reset">
+                    <p>Reset graph and entered data to default?</p>
+                    <div class="btn-group">
+                        <button id="reset__cancel">Cancel</button>
+                        <div class="item reset">
+                            <button class="js--reset">Reset Data</button>
+                        </div>
+                    </div> 
+                </div>   
+            </div>
+
+
+            <nav class="nav clearfix">
+                <div class="slc--help-reset">
+                    <div class="item reset">
+                        <button id="open__reset">Reset</button>
+                    </div>
+                    <div id="js--help" class="btn_help">
+                        <button class="js--help">Help</button>
+                    </div>
+                </div>
+                <div class="slc--degree-dropdowns">
+                     <div class="item degree">
+                        <label for="degree">Your Undergraduate Degree</label>
+                        <div class="input-wrap">
+                            <div class="ui floating dropdown labeled icon button" id="dropdown--one" data-color="#2182AB">
+                                <span class="text"><em style="color:#888">Select a degree to compare</em></span>
+                                <i class="dropdown icon"></i>
+                                <div class="menu">
+                                    <div class="ui icon search input">
+                                      <input type="text">
+                                      <i class="search icon"></i>
+                                    </div>
+                                    <div class="section">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="degree__divider">
+                        <p>vs.</p>
+                    </div>
+                     <div class="compare">
+                        <label for="comparison">Other Degree</label>
+                        <div class="input-wrap">
+                            <div class="ui floating dropdown labeled icon button" id="dropdown--two" data-color="#2182AB">
+                                <span class="text"><em style="color:#888">Select a degree to compare</em></span>
+                                <i class="dropdown icon"></i>
+                                <div class="menu">
+                                    <div class="ui icon search input">
+                                      <input type="text">
+                                      <i class="search icon"></i>
+                                    </div>
+                                    <div class="section">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               <div id="params-btn-container">
+                    <button id="params-btn">+ Add additional data</button>
+                </div>
+               <div class="slc--params">
+                    <div class="mobile-window">
+                        <p>Changes update graph automatically. Close when done.</p>
+                        <button id="params-close">Close</button>
+                        <h3>Additional Data</h3>
+                    </div>
+                    <div class="item debt">
+                        <label for="debt">Debt</label>
+                        <div class="tip">
+                            <div class="tip-content">
+                                <p>About 70 percent of Bachelor&rsquo;s graduates borrow before earning their degree, and the typical amount of student debt for those who borrowed was $26,500 as of 2012, the most recent year available.</p>
+                            </div>
+                        </div>
+                        <div class="input-wrap">
+                            <input type="text" id="debt" value="27000" class="js--input-debt" />
+                            <div class="invalid">
+                                <p>Please enter a value between $0 and $200,000.</p>
+                            </div>
+                            <div class="input__guide">
+                                <p>$0-200,000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item interest">
+                        <label for="interest">Interest</label>
+                        <div class="tip">
+                            <div class="tip-content">
+                                <p>The interest rate on federal student loans changes each year and is currently 4.66% for the 2014-2015 school year. The interest rate on private student loans may be different.</p>
+                            </div>
+                        </div>
+                        <div class="input-wrap">
+                            <input type="text" id="interest" value="4.53" class="js--input-interest" />
+                            <div class="invalid">
+                                <p>Please enter a value between 0% and 15%.</p>
+                            </div>
+                            <div class="input__guide">
+                                <p>0-15%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item term">
+                        <label for="term">Term</label>
+                        <div class="tip">
+                            <div class="tip-content">
+                                <p>Standard student loans have a 10-year repayment term, but this period can be lengthened in some circumstances.</p>
+                            </div>
+                        </div>
+                        <div class="input-wrap">
+                            <input type="text" id="term" value="10" class="js--input-term" />
+                            <div class="invalid">
+                                <p>Please enter a value between 10 and 30.</p>
+                            </div>
+                            <div class="input__guide">
+                                <p>10-30 yrs</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item increase">
+                        <label for="increase" style="margin-top:-5px;">Additional Payment</label>
+                        <div class="tip">
+                            <div class="tip-content">
+                                <p>There are no fees or penalties for paying off federal student loans faster than the normal monthly payment and doing so will result in less total interest paid at the expense of a larger monthly payment. Enter any additional payment per month here.</p>
+                            </div>
+                        </div>
+                        <div class="input-wrap">
+                            <input type="text" id="increase_payment" value="0" class="js--input-increase" />
+                            <div class="invalid">
+                                <p>Please enter a value between $0 and $1,000.</p>
+                            </div>
+                            <div class="input__guide">
+                                <p>$0-1,000</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="item earnings">
+                        <label for="earnings">Earnings</label>
+                        <div class="input-wrap">
+                            <div class="earnings--radio">
+                                <label class="container">High
+                                  <input class="js--input-earningsLevel" type="radio" name="earning-level" value="top" id="top">
+                                  <span class="radio-dot"></span>
+                                </label>
+
+                                <label class="container">Middle
+                                  <input class="js--input-earningsLevel" type="radio" name="earning-level" value="top" id="median" checked>
+                                  <span class="radio-dot"></span>
+                                </label>
+
+                                <label class="container">Low
+                                  <input class="js--input-earningsLevel" type="radio" name="earning-level" value="top" id="low">
+                                  <span class="radio-dot"></span>
+                                </label>
+                            </div>
+                            <div class="item full-time mobile">
+                                <label for="full-time2" class="full-time container">Always Work Full-Time
+                                    <input type="checkbox" id="full-time2" class="mobile-repeat" />
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item full-time">
+                        <label for="full-time" class="full-time container">Always Work Full-Time
+                            <input type="checkbox" id="full-time" class="js--input-fullTime" />
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+            </nav>
+
+            <section class="stats clearfix">
+                <div class="item">
+                    <h3>Monthly Payment</h3>
+                    <p class="js--display-payment"></p>
+                </div>
+                <div class="item">
+                    <h3>Total Paid</h3>
+                    <p class="js--display-totalPaid"></p>
+                </div>
+                <div class="item">
+                    <h3>Interest Paid</h3>
+                    <p class="js--display-interestPaid"></p>
+                </div>
+            </section>
+            <section class="charts clearfix">
+                <div class="chart-1 js--chart-1">
+                    <h3>How hard will it be to pay off my loan?</h3>
+                    <p>Percent of Monthly Earnings Toward Monthly Loan Repayment</p>
+
+                    <div class="key">
+                        <p>As a rule of thumb, loan repayments become more difficult when they exceed 10% of income, and default risk begins to rise sharply when they exceed 12% of income.</p>
+                        <ul class="clearfix">
+                            <li>0&ndash;10%</li>
+                            <li>10&ndash;12%</li>
+                            <li>12% +</li>
+                        </ul>
+                    </div>
+
+                    <div class="chart">
+                        <div class="mobile-controls">
+                            <div id="mobile-tooltip-container">
+                                <aside id="primary-tip" class="tip js--tip">
+                                    <p class="js--major">Selected</p>
+                                    <strong class="js--tip-percent">8.7%</strong>
+                                    <table cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td>Earnings</td><td class="number js--tip-earnings">$4,512</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Loan Payment</td><td class="number js--tip-loan">$123</td>
+                                        </td>
+                                    </table>
+                                </aside>
+                                <aside id="compare-tip" class="tip js--tip">
+                                    <p class="js--major">Selected</p>
+                                    <strong class="js--tip-percent">8.7%</strong>
+                                    <table cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td>Earnings</td><td class="number js--tip-earnings">$4,512</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Loan Payment</td><td class="number js--tip-loan">$123</td>
+                                        </td>
+                                    </table>
+                                </aside>
+                            </div>
+
+                            <div class="slidecontainer">
+                                <p>Drag slider or type in box to adjust year.</p>
+                                <input type="range" min="1" max="10" value="1" class="slider" step="1" id="year-slider">
+                                <div class="slider--typebox">
+                                    <input id="slider__number" type="number" size="3" maxlength="3" min="1" max="10" value="1"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <svg></svg>
+
+                        <aside id="hover--tip" class="tip js--tip">
+                            <p class="js--major">Selected</p>
+                            <strong class="js--tip-percent">8.7%</strong>
+                            <table cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td>Earnings</td><td class="number js--tip-earnings">$4,512</td>
+                                </tr>
+                                <tr>
+                                    <td>Loan Payment</td><td class="number js--tip-loan">$123</td>
+                                </td>
+                            </table>
+                        </aside>
+                    </div>
+                </div>
+                <div class="chart-2 js--chart-2">
+                    <h3>Share of Earnings to Repayment</h3>
+                    <div id="chart-2-container">
+                        <div class="chart">
+                            <div class="earnings-sum">
+                                <p class="value js--earnings-sum-value"></p>
+                                <p class="units">Sum of Earnings over Term</p>
+                            </div>
+                        </div>
+                        <table>
+                            <tr class="js--principal">
+                                <td class="principal">To Loan Principal</td>
+                                <td class="js--principal-percent"></td>
+                                <td class="js--principal-total"></td>
+                            </tr>
+                            <tr class="js--interest">
+                                <td class="interest">To Loan Interest</td>
+                                <td class="js--interest-percent"></td>
+                                <td class="js--interest-total"></td>
+                            </tr>
+                            <tr class="js--unused">
+                                <td class="unused">Kept After Repayment</td>
+                                <td class="js--unused-percent"></td>
+                                <td class="js--unused-total"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+        <script type="text/javascript" src="js/vendor/chosen/chosen.jquery.min.js"></script>
+        <script type="text/javascript" src="js/vendor/transition.min.js"></script>
+        <script type="text/javascript" src="js/vendor/dropdown.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.12/d3.min.js"></script>
+        <script type="text/javascript" src="js/loanCalculator.js"></script>        
+        
+    </body>
+    
+</html>
